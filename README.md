@@ -1,5 +1,12 @@
 # Hello World Starter (Next.js 16)
 
+[![Deploy Next.js site to GitHub Pages](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml)
+[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D22-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-000000?logo=next.js)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
+
 Minimaler Neustart auf Basis von **Next.js 16**, **React 19**, **TypeScript** und **Tailwind CSS**.
 
 Die Seite ist absichtlich leer gehalten und zeigt nur eine statische "Hello World"-Ansicht.
@@ -30,7 +37,7 @@ Es gibt **keine Restaurant-Inhalte**, **keine dynamischen Datenquellen** und **k
 ├── .github/workflows/
 │   └── deploy-gh-pages.yml
 ├── next.config.mjs
-├── tailwind.config.ts
+├── postcss.config.js
 ├── tsconfig.json
 ├── eslint.config.mjs
 └── package.json

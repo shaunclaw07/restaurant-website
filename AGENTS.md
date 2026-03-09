@@ -1,9 +1,14 @@
 # AGENTS.md
 
 ## Projektüberblick
-- Projekt: **Restaurant Daphne Website** (Next.js 16, App Router, TypeScript, Tailwind CSS).
-- Ziel: Statische, performante Landingpage mit GitHub-Pages-Deployment.
-- Wichtige Bereiche: Hero, Speisekarte (datengetrieben aus JSON + PDF-Download), Info/Reservierung, Footer.
+- Projektstatus: **Clean Restart / Starter-Projekt**.
+- Ziel: Solide Ausgangsbasis für ein modernes Webdevelopment-Projekt.
+- Aktueller Scope: Eine statische, bewusst minimale "Hello World"-Seite ohne Business-Logik.
+
+## Verbindliche Produktvorgaben
+- **Keine dynamischen Inhalte** (kein API-Fetching, keine CMS-Anbindung, keine serverseitige Datenlogik).
+- **Keine domänenspezifischen Inhalte** aus dem alten Restaurant-Kontext.
+- Fokus auf klare, wartbare Basisstruktur für spätere Iterationen.
 
 ## Tech-Stack
 - Node.js 22+
@@ -11,69 +16,37 @@
 - React 19
 - TypeScript
 - Tailwind CSS
-- Lucide React
 
-## Lokale Entwicklung
-1. Abhängigkeiten installieren:
-   - `npm install`
-2. Dev-Server starten:
-   - `npm run dev`
-3. Linting (ESLint CLI):
-   - `npm run lint`
-4. Build prüfen:
-   - `npm run build`
-5. Production-Server lokal testen:
-   - `npm run start`
+## Architektur (aktuell)
+- `app/layout.tsx`: Globales Layout und Metadaten.
+- `app/page.tsx`: Statische Startseite (Hello World).
+- `app/globals.css`: Basisstyles und Tailwind-Includes.
+- `next.config.mjs`: Static Export + GitHub-Pages-kompatible Pfadlogik.
 
-## Architektur & wichtige Dateien
-- `app/layout.tsx`: Globales Layout/Metadaten.
-- `app/page.tsx`: Zusammensetzen der Hauptsektionen.
-- `components/Hero.tsx`: Hero-Bereich.
-- `components/MenuSection.tsx`: Menüsektion (dynamisch aus `data/menu.json`, inkl. PDF-Download).
-- `components/InfoSection.tsx`: Infos/Reservierung.
-- `components/Footer.tsx`: Footer-Inhalte.
-- `data/menu.json`: Zentrale Datenquelle für Speisekarte und Restaurant-Metadaten.
-- `public/menu.pdf`: PDF-Datei der Speisekarte für Download/Druck.
-- `next.config.mjs`: Static Export + GitHub-Pages-Konfiguration.
+## Entwicklungsrichtlinien (modernes Webdevelopment)
+- Kleine, klar abgegrenzte Commits statt großem Refactoring in einem Schritt.
+- TypeScript strikt und konsistent nutzen.
+- Komponenten logisch, semantisch und barrierearm strukturieren.
+- Styling mobile-first und mit konsistenten Tailwind-Konventionen.
+- Performance beachten (leichte UI, keine unnötigen Dependencies).
+- Keine toten Dateien, Altlasten oder ungenutzten Assets im Repo belassen.
 
-## Deployment-Hinweise (kritisch)
-- Deployment-Ziel ist **GitHub Pages**.
-- `next.config.mjs` verwendet bei GitHub Actions:
+## Deployment-Hinweise
+- Deployment-Ziel bleibt **GitHub Pages**.
+- `next.config.mjs` nutzt:
   - `output: "export"`
   - `trailingSlash: true`
-  - `basePath: /restaurant-website`
-  - `assetPrefix: /restaurant-website/`
-- Bei Assets/Links auf Pfade achten:
-  - Root-absolute Pfade (`/datei`) können unter Subpath-Deployments fehlschlagen.
-  - Pfade müssen mit `basePath`/Export kompatibel sein.
-- Wenn Repo-Name geändert wird, `repoName` in `next.config.mjs` anpassen.
+  - GitHub-Actions-spezifisches `basePath` und `assetPrefix`
+- Bei Repo-Umbenennung `repoName` in `next.config.mjs` aktualisieren.
 
-## Code- und Änderungsrichtlinien für AI-Agenten
-- Bestehende Struktur und Komponentenstil beibehalten.
-- Kleine, fokussierte Änderungen statt großer Refactorings.
-- TypeScript-Typen und Tailwind-Konventionen konsistent halten.
-- Keine toten Links oder Platzhalter einführen, ohne sie klar zu kennzeichnen.
-- Bei UI-Änderungen auf responsives Verhalten achten (mobile-first).
-
-## Content-/Business-Kontext
-- Markenwirkung: mediterran, elegant, hochwertig.
-- Sprache/Content primär deutsch.
-- Visuelle Konsistenz mit Brandfarben und bestehenden Klassen sicherstellen.
-
-## Vor dem Abschluss einer Änderung
+## Vor Abschluss jeder Änderung
 - `npm run lint` ausführen.
-- Wenn möglich: `npm run build` prüfen.
-- Relevante manuelle Funktionsprüfung kurz dokumentieren (z. B. PDF-Download, Druckansicht, Responsiveness).
-
-## Häufige Fehlerquellen
-- Falsche Pfade unter GitHub Pages (`basePath` nicht berücksichtigt).
-- Datenänderungen in `data/menu.json` ohne Validierung/Formatprüfung.
-- Änderungen an `next.config.mjs` ohne Prüfung des Export-Workflows.
-- Unbeabsichtigte Design-Brüche durch inkonsistente Tailwind-Klassen.
+- Wenn möglich zusätzlich `npm run build` ausführen.
+- Kurz prüfen, dass die Seite statisch bleibt und keine dynamischen Inhalte eingebaut wurden.
 
 ## Erwartung an Commit-/PR-Qualität
-- Aussagekräftige Commit-Message (was + warum).
-- PR-Beschreibung mit:
+- Commit-Message: prägnant, mit **was** und **warum**.
+- PR-Beschreibung enthält:
   - Motivation
-  - Konkreten Änderungen
-  - Testergebnissen/Limitierungen
+  - Konkrete Änderungen
+  - Testergebnisse / bekannte Limitierungen

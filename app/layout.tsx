@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Restaurant Daphne Bremen",
-  description: "Griechische Küche in elegant-mediterranem Ambiente in Bremen."
+  title: "Hello World Starter",
+  description: "Leere Next.js Starter-Seite ohne dynamische Inhalte."
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

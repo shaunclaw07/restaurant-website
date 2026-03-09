@@ -1,14 +1,12 @@
 # Restaurant Daphne Website
 
-[![Deploy Next.js site to GitHub Pages](https://github.com/YOUR_GITHUB_USERNAME/restaurant-website/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/YOUR_GITHUB_USERNAME/restaurant-website/actions/workflows/deploy-gh-pages.yml)
+[![Deploy Next.js site to GitHub Pages](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml)
 ![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![React](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
 ![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)
 ![Deployment](https://img.shields.io/badge/Deployment-GitHub%20Pages-222222?logo=githubpages&logoColor=white)
-
-> Hinweis: Ersetze `YOUR_GITHUB_USERNAME` in dem CI/CD-Badge durch den tatsächlichen GitHub-Owner, damit der Workflow-Status korrekt angezeigt wird.
 
 Modern, responsive website rework for **Restaurant Daphne (Bremen)** built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.
 

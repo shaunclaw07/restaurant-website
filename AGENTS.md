@@ -1,14 +1,14 @@
 # AGENTS.md
 
 ## Projektüberblick
-- Projekt: **Restaurant Daphne Website** (Next.js 14, App Router, TypeScript, Tailwind CSS).
+- Projekt: **Restaurant Daphne Website** (Next.js 16, App Router, TypeScript, Tailwind CSS).
 - Ziel: Statische, performante Landingpage mit GitHub-Pages-Deployment.
 - Wichtige Bereiche: Hero, Speisekarte (datengetrieben aus JSON + PDF-Download), Info/Reservierung, Footer.
 
 ## Tech-Stack
-- Node.js 20+
-- Next.js 14 (App Router)
-- React 18
+- Node.js 22+
+- Next.js 16 (App Router)
+- React 19
 - TypeScript
 - Tailwind CSS
 - Lucide React
@@ -18,7 +18,7 @@
    - `npm install`
 2. Dev-Server starten:
    - `npm run dev`
-3. Linting:
+3. Linting (ESLint CLI):
    - `npm run lint`
 4. Build prüfen:
    - `npm run build`

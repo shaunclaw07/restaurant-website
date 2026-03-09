@@ -33,22 +33,22 @@ export function InfoSection() {
           <div className="mt-6 space-y-4 text-sm">
             <p className="flex items-center gap-3">
               <Phone size={17} className="text-brand-gold" />
-              <a href="tel:+4942117507002" className="hover:text-brand-olive">0421 175 070 02</a>
+              <a href="tel:+4942193847261" className="hover:text-brand-olive">0421 938 472 61</a>
             </p>
             <p className="flex items-center gap-3">
               <Mail size={17} className="text-brand-gold" />
-              <a href="mailto:Pilsgartenbremen@gmail.com" className="hover:text-brand-olive">
-                Pilsgartenbremen@gmail.com
+              <a href="mailto:kontakt.daphne.8472@example.com" className="hover:text-brand-olive">
+                kontakt.daphne.8472@example.com
               </a>
             </p>
             <p className="flex items-center gap-3">
               <MapPin size={17} className="text-brand-gold" />
-              Eislebener Str. 70, 28329 Bremen
+              Standort in Bremen (Details auf Anfrage)
             </p>
           </div>
 
           <a
-            href="mailto:Pilsgartenbremen@gmail.com?subject=Reservierungsanfrage%20Restaurant%20Daphne"
+            href="mailto:kontakt.daphne.8472@example.com?subject=Reservierungsanfrage%20Restaurant%20Daphne"
             className="mt-7 inline-block rounded-full bg-brand-olive px-7 py-3 text-sm font-medium uppercase tracking-[0.14em] text-white transition hover:bg-brand-brown"
           >
             Reservierung per E-Mail

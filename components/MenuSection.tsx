@@ -14,7 +14,7 @@ export function MenuSection() {
             Wert auf Frische und haben einen hohen Qualitätsanspruch an die verwendeten Produkte.
           </p>
           <a
-            href="/menu.pdf"
+            href="menu.pdf"
             target="_blank"
             rel="noreferrer"
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-gold px-5 py-2 text-sm font-medium text-brand-gold transition hover:bg-brand-gold hover:text-white"
@@ -26,7 +26,7 @@ export function MenuSection() {
         <div className="overflow-hidden rounded-xl border border-brand-gold/20 bg-brand-light">
           <iframe
             title="Speisekarte PDF"
-            src="/menu.pdf"
+            src="menu.pdf"
             className="h-[420px] w-full"
           />
         </div>

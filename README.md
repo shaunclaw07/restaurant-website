@@ -1,5 +1,13 @@
 # Restaurant Daphne Website
 
+[![Deploy Next.js site to GitHub Pages](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![React](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)
+![Deployment](https://img.shields.io/badge/Deployment-GitHub%20Pages-222222?logo=githubpages&logoColor=white)
+
 Modern, responsive website rework for **Restaurant Daphne (Bremen)** built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.
 
 ## Project Overview
@@ -15,7 +23,7 @@ This repository contains a static-first frontend redesign focused on:
 The site is implemented as a one-page experience with modular sections:
 
 - **Hero**
-- **Menu** (inline PDF viewer + open-in-new-tab action)
+- **Menu** (datengetriebene Speisekarte + PDF-Download / Druckansicht)
 - **Info / Reservation**
 - **Footer** (opening times, legal links, map)
 
@@ -45,11 +53,13 @@ The site is implemented as a one-page experience with modular sections:
 │   ├── Hero.tsx
 │   ├── InfoSection.tsx
 │   └── MenuSection.tsx
+├── data/
+│   └── menu.json
 ├── public/
 │   └── menu.pdf
 ├── .github/workflows/
 │   └── deploy-gh-pages.yml
-├── next.config.ts
+├── next.config.mjs
 ├── tailwind.config.ts
 ├── tsconfig.json
 └── package.json
@@ -123,7 +133,7 @@ npm run start
 
 ## Static Export & GitHub Pages
 
-This project is configured for static export in `next.config.ts`:
+This project is configured for static export in `next.config.mjs`:
 
 - `output: "export"`
 - `trailingSlash: true`
@@ -163,18 +173,19 @@ Repository owners need to do the following initial setup before the workflow can
 
 ### Repository name note (important)
 
-`next.config.ts` currently uses `restaurant-website` as the GitHub Pages subpath:
+`next.config.mjs` currently uses `restaurant-website` as the GitHub Pages subpath:
 
 - `basePath: /restaurant-website`
 - `assetPrefix: /restaurant-website/`
 
-If you rename the repository, update `repoName` in `next.config.ts` accordingly, otherwise CSS/JS assets may 404 in production.
+If you rename the repository, update `repoName` in `next.config.mjs` accordingly, otherwise CSS/JS assets may 404 in production.
 
 ---
 
 ## Content & Assets
 
-- `public/menu.pdf` is currently a placeholder and should be replaced with the real menu file.
+- `data/menu.json` ist die zentrale, editierbare Quelle für Speisekarten-Inhalte (Kategorien, Gerichte, Preise, Hinweise).
+- `public/menu.pdf` ist die externe Druck-/Downloadversion der Speisekarte.
 - Footer legal links (`Impressum`, `Datenschutz`) currently use placeholder anchors and should be mapped to final routes/pages.
 
 ---
@@ -182,7 +193,7 @@ If you rename the repository, update `repoName` in `next.config.ts` accordingly,
 ## Future Improvements
 
 - Add dedicated pages for events and reservations
-- Replace placeholder PDF with final branded menu
+- Druck-CSS/Print-Layout ergänzen, um aus der HTML-Speisekarte eine druckoptimierte Fassung zu erzeugen
 - Add SEO enhancements (Open Graph, structured data)
 - Add image optimization workflow and compressed media assets
 - Add test automation (unit/integration)

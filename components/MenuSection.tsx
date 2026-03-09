@@ -1,122 +1,83 @@
-"use client";
+import { Download, Printer } from "lucide-react";
 
-import { ChevronLeft, ChevronRight, Expand, FileText, Shrink } from "lucide-react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import menuData from "@/data/menu.json";
+
+type MenuItem = {
+  name: string;
+  description?: string;
+  price: number;
+  size?: string;
+  note?: string;
+};
+
+const formatPrice = (price: number) =>
+  new Intl.NumberFormat("de-DE", {
+    style: "currency",
+    currency: "EUR",
+  }).format(price);
 
 export function MenuSection() {
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isFullscreen, setIsFullscreen] = useState(false);
-  const viewerRef = useRef<HTMLDivElement>(null);
-
-  const leftPageSrc = useMemo(
-    () => `menu.pdf#page=${currentPage}&view=FitH`,
-    [currentPage],
-  );
-  const rightPageSrc = useMemo(
-    () => `menu.pdf#page=${currentPage + 1}&view=FitH`,
-    [currentPage],
-  );
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      setIsFullscreen(Boolean(document.fullscreenElement));
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-    };
-  }, []);
-
-  const goToPreviousSpread = () => {
-    setCurrentPage((page) => Math.max(1, page - 2));
-  };
-
-  const goToNextSpread = () => {
-    setCurrentPage((page) => page + 2);
-  };
-
-  const toggleFullscreen = async () => {
-    const container = viewerRef.current;
-    if (!container) {
-      return;
-    }
-
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      return;
-    }
-
-    await container.requestFullscreen();
-  };
+  const { restaurant } = menuData;
 
   return (
     <section id="speisekarte" className="section-shell py-16 sm:py-24">
       <div className="laurel-divider mb-6 text-sm uppercase tracking-[0.18em]">Speisekarte</div>
-      <div className="grid gap-8 rounded-2xl bg-white p-6 shadow-soft sm:p-8 lg:grid-cols-[1fr_1.6fr]">
-        <div>
-          <h2 className="mb-4 text-2xl font-semibold uppercase tracking-daphne text-brand-charcoal">
-            Unsere Küche
+      <div className="rounded-2xl bg-white p-6 shadow-soft sm:p-8">
+        <div className="mb-8 border-b border-brand-gold/20 pb-6">
+          <h2 className="text-3xl font-semibold uppercase tracking-daphne text-brand-charcoal">
+            {restaurant.name}
           </h2>
-          <p className="text-sm leading-7 text-brand-charcoal/80">
-            Unsere Speisen werden mit viel Liebe und Sorgfalt täglich frisch zubereitet. Wir legen großen
-            Wert auf Frische und haben einen hohen Qualitätsanspruch an die verwendeten Produkte.
-          </p>
-          <a
-            href="menu.pdf"
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-brand-gold px-5 py-2 text-sm font-medium text-brand-gold transition hover:bg-brand-gold hover:text-white"
-          >
-            <FileText size={16} />
-            Speisekarte als PDF öffnen
-          </a>
+          <p className="mt-2 text-sm uppercase tracking-[0.14em] text-brand-charcoal/70">{restaurant.slogan}</p>
+          <div className="mt-4 flex flex-wrap gap-3">
+            <a
+              href="menu.pdf"
+              download
+              className="inline-flex items-center gap-2 rounded-full border border-brand-gold px-5 py-2 text-sm font-medium text-brand-gold transition hover:bg-brand-gold hover:text-white"
+            >
+              <Download size={16} />
+              Speisekarte als PDF herunterladen
+            </a>
+            <a
+              href="menu.pdf"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-charcoal/20 px-5 py-2 text-sm font-medium text-brand-charcoal transition hover:border-brand-charcoal"
+            >
+              <Printer size={16} />
+              Druckversion öffnen
+            </a>
+          </div>
         </div>
 
-        <div
-          ref={viewerRef}
-          className="overflow-hidden rounded-xl border border-brand-gold/20 bg-brand-light p-3 sm:p-4"
-        >
-          <div className="mb-3 flex items-center justify-between gap-3">
-            <span className="text-xs font-medium uppercase tracking-[0.14em] text-brand-charcoal/70">
-              Seiten {currentPage} / {currentPage + 1}
-            </span>
-            <div className="flex items-center gap-2">
-              <button
-                type="button"
-                onClick={goToPreviousSpread}
-                className="rounded-full border border-brand-gold/40 p-2 text-brand-charcoal transition hover:border-brand-gold hover:text-brand-gold"
-                aria-label="Vorherige Seiten"
-              >
-                <ChevronLeft size={16} />
-              </button>
-              <button
-                type="button"
-                onClick={goToNextSpread}
-                className="rounded-full border border-brand-gold/40 p-2 text-brand-charcoal transition hover:border-brand-gold hover:text-brand-gold"
-                aria-label="Nächste Seiten"
-              >
-                <ChevronRight size={16} />
-              </button>
-              <button
-                type="button"
-                onClick={toggleFullscreen}
-                className="rounded-full border border-brand-gold/40 p-2 text-brand-charcoal transition hover:border-brand-gold hover:text-brand-gold"
-                aria-label={isFullscreen ? "Vollbild verlassen" : "Vollbild aktivieren"}
-              >
-                {isFullscreen ? <Shrink size={16} /> : <Expand size={16} />}
-              </button>
-            </div>
-          </div>
+        <div className="grid gap-7 md:grid-cols-2">
+          {restaurant.menu.map((category) => (
+            <article key={category.category_id} className="rounded-xl border border-brand-gold/20 bg-brand-light/60 p-5">
+              <h3 className="text-lg font-semibold text-brand-charcoal">{category.category_name}</h3>
+              {category.category_description ? (
+                <p className="mt-1 text-sm text-brand-charcoal/70">{category.category_description}</p>
+              ) : null}
 
-          <div className="grid gap-3 md:grid-cols-2">
-            <iframe title="Speisekarte Seite links" src={leftPageSrc} className="h-[440px] w-full rounded-lg bg-white" />
-            <iframe
-              title="Speisekarte Seite rechts"
-              src={rightPageSrc}
-              className="hidden h-[440px] w-full rounded-lg bg-white md:block"
-            />
-          </div>
+              <ul className="mt-4 space-y-3">
+                {category.items.map((item: MenuItem) => (
+                  <li key={`${category.category_id}-${item.name}-${item.size ?? "default"}`}>
+                    <div className="flex items-baseline justify-between gap-3">
+                      <p className="font-medium text-brand-charcoal">
+                        {item.name}
+                        {item.size ? <span className="ml-1 text-sm text-brand-charcoal/70">({item.size})</span> : null}
+                      </p>
+                      <span className="shrink-0 text-sm font-semibold text-brand-gold">{formatPrice(item.price)}</span>
+                    </div>
+                    {item.description ? <p className="text-sm text-brand-charcoal/80">{item.description}</p> : null}
+                    {item.note ? <p className="text-xs text-brand-charcoal/70">{item.note}</p> : null}
+                  </li>
+                ))}
+              </ul>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-8 rounded-xl border border-brand-gold/20 bg-brand-light p-5 text-sm text-brand-charcoal/80">
+          <p>{restaurant.legal_notice}</p>
         </div>
       </div>
     </section>

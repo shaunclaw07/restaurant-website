@@ -1,0 +1,328 @@
+{
+  "restaurant": {
+    "name": "DAPHNE",
+    "slogan": "Griechische Gastfreundschaft & mediterrane Seele",
+    "contact": {
+      "address": "Musterstraße 123, 12345 Musterstadt",
+      "phone": "01234 / 567890",
+      "email": "info@daphne-restaurant.de",
+      "website": "www.daphne-restaurant.de"
+    },
+    "opening_hours": {
+      "monday_saturday": "11:30 - 14:30 Uhr & 17:00 - 23:00 Uhr",
+      "sunday_holidays": "12:00 - 22:00 Uhr",
+      "kitchen": "12:00 - 22:00 Uhr"
+    },
+    "menu": [
+      {
+        "category_id": "mezedes",
+        "category_name": "Mezedes & Vorspeisen",
+        "category_description": "Kleine Gerichte zum Teilen und Genießen",
+        "items": [
+          {
+            "name": "Tzatziki (Hausgemacht)",
+            "description": "Griechischer Joghurt mit Gurke, Knoblauch und Olivenöl",
+            "price": 5.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei"]
+          },
+          {
+            "name": "Taramasalata",
+            "description": "Fischrogen-Creme mit Zitrone und Olivenöl, dazu frisches Brot",
+            "price": 6,
+            "currency": "EUR",
+            "tags": ["fisch"]
+          },
+          {
+            "name": "Dolmades",
+            "description": "Gefüllte Weinblätter mit Reis und Kräutern (4 Stück)",
+            "price": 6.5,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei"]
+          },
+          {
+            "name": "Saganaki",
+            "description": "Gebratener Käse, flambiert mit Zitrone",
+            "price": 7.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei"]
+          },
+          {
+            "name": "Calamari frittiert",
+            "description": "Knusprige Tintenfischringe mit Zitronenspalte",
+            "price": 9.5,
+            "currency": "EUR",
+            "tags": ["fisch", "meeresfrüchte"]
+          },
+          {
+            "name": "Griechische Oliven & Feta",
+            "description": "Mariniert in Kräutern und Olivenöl",
+            "price": 6,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei"]
+          }
+        ]
+      },
+      {
+        "category_id": "salate",
+        "category_name": "Salate",
+        "category_description": "Frisch und mediterran",
+        "items": [
+          {
+            "name": "Horiatiki (Der Klassiker)",
+            "description": "Tomaten, Gurken, Paprika, Zwiebeln, Kalamata-Oliven und ein großer Block Feta",
+            "price": 9.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei"]
+          },
+          {
+            "name": "Bauerntopf",
+            "description": "Gemischter Salat mit Thunfisch, Ei und Feta",
+            "price": 10.5,
+            "currency": "EUR",
+            "tags": ["fisch", "vegetarisch"]
+          },
+          {
+            "name": "Grüner Salat",
+            "description": "Mit hausgemachtem Oregano-Dressing",
+            "price": 5,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei"]
+          }
+        ]
+      },
+      {
+        "category_id": "fleisch",
+        "category_name": "Hauptgerichte – Fleisch",
+        "category_description": "Alle Fleischgerichte werden mit Tzatziki, Pommes Frites und Reis serviert",
+        "items": [
+          {
+            "name": "Gyros Teller",
+            "description": "Zartes Schweinefleisch vom Drehspieß",
+            "price": 13.9,
+            "currency": "EUR",
+            "tags": ["schwein"]
+          },
+          {
+            "name": "Souvlaki Schwein",
+            "description": "Schweinefleischstücke am Holzspieß gegrillt",
+            "price": 14.5,
+            "currency": "EUR",
+            "tags": ["schwein", "glutenfrei"]
+          },
+          {
+            "name": "Souvlaki Hähnchen",
+            "description": "Zartes Hähnchenfilet am Spieß",
+            "price": 14.5,
+            "currency": "EUR",
+            "tags": ["geflügel", "glutenfrei"]
+          },
+          {
+            "name": "Bifteki",
+            "description": "Griechisches Hacksteak gewürzt nach Hausrezept",
+            "price": 15.5,
+            "currency": "EUR",
+            "tags": ["rind", "glutenfrei"]
+          },
+          {
+            "name": "Kleftiko",
+            "description": "Zartes Lammfleisch, im Ofen geschmort mit Kartoffeln und Kräutern",
+            "price": 18.9,
+            "currency": "EUR",
+            "tags": ["lamm", "glutenfrei"]
+          },
+          {
+            "name": "Schnitzel „Athener Art”",
+            "description": "Panierter Schweinerücken mit Feta überbacken",
+            "price": 16.5,
+            "currency": "EUR",
+            "tags": ["schwein"]
+          }
+        ]
+      },
+      {
+        "category_id": "vegetarisch_auflauf",
+        "category_name": "Aufläufe & Vegetarisch",
+        "category_description": "Herzhaft und traditionell",
+        "items": [
+          {
+            "name": "Moussaka",
+            "description": "Auberginen, Hackfleisch, Kartoffeln und Béchamelsoße",
+            "price": 14.9,
+            "currency": "EUR",
+            "tags": ["fleisch", "lamm"]
+          },
+          {
+            "name": "Pastitsio",
+            "description": "Nudelauflauf mit Hackfleischsoße und Béchamel",
+            "price": 14.5,
+            "currency": "EUR",
+            "tags": ["fleisch", "nudeln"]
+          },
+          {
+            "name": "Gemista",
+            "description": "Mit Reis und Kräutern gefüllte Tomaten und Paprika",
+            "price": 13.5,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei"]
+          },
+          {
+            "name": "Spanakopita",
+            "description": "Blätterteigpastete mit Spinat und Feta, dazu Salat",
+            "price": 12.9,
+            "currency": "EUR",
+            "tags": ["vegetarisch"]
+          },
+          {
+            "name": "Fasolada",
+            "description": "Traditionelle weiße Bohnensuppe mit Olivenöl",
+            "price": 8.5,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei", "suppe"]
+          }
+        ]
+      },
+      {
+        "category_id": "fisch",
+        "category_name": "Fisch & Meeresfrüchte",
+        "category_description": "Frisch vom Markt (Fang des Tages)",
+        "items": [
+          {
+            "name": "Gegrillter Tintenfisch",
+            "description": "Ganz oder als Steak, mit Olivenöl und Oregano",
+            "price": 16.9,
+            "currency": "EUR",
+            "tags": ["fisch", "meeresfrüchte", "glutenfrei"]
+          },
+          {
+            "name": "Fischfilet (Saisonal)",
+            "description": "Gegrillt oder frittiert, fragen Sie unser Personal nach dem aktuellen Fang",
+            "price": 19.9,
+            "currency": "EUR",
+            "tags": ["fisch", "glutenfrei"],
+            "note": "Preis abhängig vom Gewicht und Art"
+          }
+        ]
+      },
+      {
+        "category_id": "nachspeisen",
+        "category_name": "Nachspeisen",
+        "category_description": "Süßer Abschluss",
+        "items": [
+          {
+            "name": "Baklava",
+            "description": "Phyllo-Teig mit Nüssen und Honig",
+            "price": 5.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "nüsse"]
+          },
+          {
+            "name": "Galaktoboureko",
+            "description": "Grießpudding im Filoteig mit Honigsirup",
+            "price": 5.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch"]
+          },
+          {
+            "name": "Yoghurt mit Honig & Walnüssen",
+            "description": "Dicker griechischer Joghurt",
+            "price": 4.9,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei", "nüsse"]
+          }
+        ]
+      },
+      {
+        "category_id": "beilagen",
+        "category_name": "Beilagen (Extra)",
+        "category_description": "",
+        "items": [
+          {
+            "name": "Pommes Frites",
+            "description": "",
+            "price": 3.5,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei"]
+          },
+          {
+            "name": "Reis",
+            "description": "",
+            "price": 3,
+            "currency": "EUR",
+            "tags": ["vegan", "glutenfrei"]
+          },
+          {
+            "name": "Frisches Brot",
+            "description": "",
+            "price": 2.5,
+            "currency": "EUR",
+            "tags": ["vegan"]
+          },
+          {
+            "name": "Extra Feta-Käse",
+            "description": "",
+            "price": 3.5,
+            "currency": "EUR",
+            "tags": ["vegetarisch", "glutenfrei"]
+          }
+        ]
+      },
+      {
+        "category_id": "getraenke",
+        "category_name": "Getränke (Auswahl)",
+        "category_description": "",
+        "items": [
+          {
+            "name": "Mineralwasser",
+            "description": "",
+            "price": 3.5,
+            "currency": "EUR",
+            "size": "0.7l",
+            "tags": ["getränk"]
+          },
+          {
+            "name": "Coca-Cola / Fanta / Sprite",
+            "description": "",
+            "price": 3,
+            "currency": "EUR",
+            "size": "0.3l",
+            "tags": ["getränk"]
+          },
+          {
+            "name": "Griechischer Wein (Hauswein)",
+            "description": "",
+            "price": 4.5,
+            "currency": "EUR",
+            "size": "0.25l",
+            "tags": ["alkohol", "wein"]
+          },
+          {
+            "name": "Griechischer Wein (Hauswein)",
+            "description": "",
+            "price": 8.5,
+            "currency": "EUR",
+            "size": "0.5l",
+            "tags": ["alkohol", "wein"]
+          },
+          {
+            "name": "Ouzo / Metaxa",
+            "description": "",
+            "price": 4,
+            "currency": "EUR",
+            "size": "4cl",
+            "tags": ["alkohol"]
+          },
+          {
+            "name": "Griechisches Bier",
+            "description": "",
+            "price": 4.5,
+            "currency": "EUR",
+            "size": "0.5l",
+            "tags": ["alkohol", "bier"]
+          }
+        ]
+      }
+    ],
+    "legal_notice": "Alle Preise in Euro inkl. MwSt. und Bedienung. Eine Liste der enthaltenen Allergene und Zusatzstoffe erhalten Sie auf Anfrage bei unserem Servicepersonal."
+  }
+}

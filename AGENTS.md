@@ -3,7 +3,7 @@
 ## Projektüberblick
 - Projekt: **Restaurant Daphne Website** (Next.js 14, App Router, TypeScript, Tailwind CSS).
 - Ziel: Statische, performante Landingpage mit GitHub-Pages-Deployment.
-- Wichtige Bereiche: Hero, Speisekarte (PDF-Link + Embed), Info/Reservierung, Footer.
+- Wichtige Bereiche: Hero, Speisekarte (datengetrieben aus JSON + PDF-Download), Info/Reservierung, Footer.
 
 ## Tech-Stack
 - Node.js 20+
@@ -29,10 +29,11 @@
 - `app/layout.tsx`: Globales Layout/Metadaten.
 - `app/page.tsx`: Zusammensetzen der Hauptsektionen.
 - `components/Hero.tsx`: Hero-Bereich.
-- `components/MenuSection.tsx`: Menüsektion inkl. PDF-Link/Embed.
+- `components/MenuSection.tsx`: Menüsektion (dynamisch aus `data/menu.json`, inkl. PDF-Download).
 - `components/InfoSection.tsx`: Infos/Reservierung.
 - `components/Footer.tsx`: Footer-Inhalte.
-- `public/menu.pdf`: PDF-Datei der Speisekarte.
+- `data/menu.json`: Zentrale Datenquelle für Speisekarte und Restaurant-Metadaten.
+- `public/menu.pdf`: PDF-Datei der Speisekarte für Download/Druck.
 - `next.config.mjs`: Static Export + GitHub-Pages-Konfiguration.
 
 ## Deployment-Hinweise (kritisch)
@@ -62,10 +63,11 @@
 ## Vor dem Abschluss einer Änderung
 - `npm run lint` ausführen.
 - Wenn möglich: `npm run build` prüfen.
-- Relevante manuelle Funktionsprüfung kurz dokumentieren (z. B. PDF-Link, Navigation, Responsiveness).
+- Relevante manuelle Funktionsprüfung kurz dokumentieren (z. B. PDF-Download, Druckansicht, Responsiveness).
 
 ## Häufige Fehlerquellen
 - Falsche Pfade unter GitHub Pages (`basePath` nicht berücksichtigt).
+- Datenänderungen in `data/menu.json` ohne Validierung/Formatprüfung.
 - Änderungen an `next.config.mjs` ohne Prüfung des Export-Workflows.
 - Unbeabsichtigte Design-Brüche durch inkonsistente Tailwind-Klassen.
 

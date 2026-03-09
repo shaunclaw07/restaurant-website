@@ -1,11 +1,11 @@
 # Restaurant Daphne Website
 
 [![Deploy Next.js site to GitHub Pages](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml/badge.svg)](https://github.com/shaunclaw07/restaurant-website/actions/workflows/deploy-gh-pages.yml)
-![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![React](https://img.shields.io/badge/React-18-149ECA?logo=react&logoColor=white)
+![React](https://img.shields.io/badge/React-19-149ECA?logo=react&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
-![Node.js](https://img.shields.io/badge/Node.js-20+-339933?logo=node.js&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-22+-339933?logo=node.js&logoColor=white)
 ![Deployment](https://img.shields.io/badge/Deployment-GitHub%20Pages-222222?logo=githubpages&logoColor=white)
 
 Modern, responsive website rework for **Restaurant Daphne (Bremen)** built with **Next.js (App Router)**, **TypeScript**, and **Tailwind CSS**.
@@ -31,8 +31,8 @@ The site is implemented as a one-page experience with modular sections:
 
 ## Tech Stack
 
-- [Next.js 14](https://nextjs.org/) (App Router)
-- [React 18](https://react.dev/)
+- [Next.js 16](https://nextjs.org/) (App Router)
+- [React 19](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Lucide React](https://lucide.dev/)
@@ -85,8 +85,8 @@ Typography and spacing are optimized for an elegant, airy look with generous hea
 
 ### 1) Prerequisites
 
-- **Node.js 20+** (recommended)
-- **npm 9+**
+- **Node.js 22+** (recommended)
+- **npm 11+**
 
 Check versions:
 
@@ -116,6 +116,8 @@ Open in browser:
 ```bash
 npm run lint
 ```
+
+> Hinweis: Seit Next.js 16 wird das Linting über die ESLint-CLI (`eslint .`) ausgeführt und nicht mehr über `next lint`.
 
 ### 5) Create production build
 

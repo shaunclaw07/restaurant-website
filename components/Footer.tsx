@@ -4,9 +4,9 @@ export function Footer() {
       <div className="section-shell grid gap-10 lg:grid-cols-[1.2fr_1fr_1fr]">
         <div>
           <p className="text-sm uppercase tracking-[0.18em] text-brand-gold">Restaurant Daphne</p>
-          <p className="mt-3 text-sm text-brand-light/80">Eislebener Str. 70, 28329 Bremen</p>
-          <p className="text-sm text-brand-light/80">Geschäftsführer: Riad Ramadan</p>
-          <p className="text-sm text-brand-light/80">Steuer-ID: 60 259 05928</p>
+          <p className="mt-3 text-sm text-brand-light/80">Standort in Bremen (Details auf Anfrage)</p>
+          <p className="text-sm text-brand-light/80">Geschäftsführung: anonymisiert</p>
+          <p className="text-sm text-brand-light/80">Steuer-ID: anonymisiert</p>
         </div>
 
         <div>
@@ -21,10 +21,10 @@ export function Footer() {
         <div>
           <h4 className="text-sm uppercase tracking-[0.14em] text-brand-gold">Anfahrt</h4>
           <iframe
-            title="Google Maps Restaurant Daphne"
+            title="Google Maps Restaurant in Bremen"
             className="mt-3 h-40 w-full rounded-lg border-0"
             loading="lazy"
-            src="https://www.google.com/maps?q=Eislebener+Str.+70,+28329+Bremen&output=embed"
+            src="https://www.google.com/maps?q=Bremen&output=embed"
           />
         </div>
       </div>
